@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 
@@ -35,7 +37,7 @@ export default function SignUp() {
 </div>
 <div>
 <h3 className="font-label-md text-label-md text-white">Verified Curriculum</h3>
-<p className="text-caption text-white/70">Industry-standard certifications recognized by top tech giants.</p>
+<p className="text-caption text-gray-700">Industry-standard certifications recognized by top tech giants.</p>
 </div>
 </div>
 <div className="flex items-start gap-6 group">
@@ -44,7 +46,7 @@ export default function SignUp() {
 </div>
 <div>
 <h3 className="font-label-md text-label-md text-white">Adaptive Learning</h3>
-<p className="text-caption text-white/70">AI-driven paths tailored to your skill level and pace.</p>
+<p className="text-caption text-gray-700">AI-driven paths tailored to your skill level and pace.</p>
 </div>
 </div>
 </div>
@@ -59,10 +61,10 @@ export default function SignUp() {
 <h2 className="font-headline-md text-headline-md text-on-background mb-1">Create Account</h2>
 <p className="font-body-md text-body-md text-on-surface-variant">Get started with your AI journey today.</p>
 </header>
-<form className="space-y-6" onsubmit="event.preventDefault();">
+<form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
 
 <div className="space-y-1">
-<label className="font-label-md text-label-md text-on-surface" for="name">Full Name</label>
+<label className="font-label-md text-label-md text-on-surface" htmlFor="name">Full Name</label>
 <div className="relative">
 <input className="w-full px-6 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-outline/50 font-body-md" id="name" placeholder="John Doe" type="text"/>
 <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/40">person</span>
@@ -70,7 +72,7 @@ export default function SignUp() {
 </div>
 
 <div className="space-y-1">
-<label className="font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<label className="font-label-md text-label-md text-on-surface" htmlFor="email">Email Address</label>
 <div className="relative">
 <input className="w-full px-6 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-outline/50 font-body-md" id="email" placeholder="name@company.com" type="email"/>
 <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/40">mail</span>
@@ -79,13 +81,13 @@ export default function SignUp() {
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div className="space-y-1">
-<label className="font-label-md text-label-md text-on-surface" for="password">Password</label>
+<label className="font-label-md text-label-md text-on-surface" htmlFor="password">Password</label>
 <div className="relative">
 <input className="w-full px-6 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-outline/50 font-body-md" id="password" placeholder="••••••••" type="password"/>
 </div>
 </div>
 <div className="space-y-1">
-<label className="font-label-md text-label-md text-on-surface" for="confirm-password">Confirm Password</label>
+<label className="font-label-md text-label-md text-on-surface" htmlFor="confirm-password">Confirm Password</label>
 <div className="relative">
 <input className="w-full px-6 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-outline/50 font-body-md" id="confirm-password" placeholder="••••••••" type="password"/>
 </div>
@@ -96,7 +98,7 @@ export default function SignUp() {
 <div className="flex items-center h-5">
 <input className="w-4 h-4 text-primary bg-surface-container-low border-outline-variant rounded focus:ring-primary focus:ring-2" id="terms" type="checkbox"/>
 </div>
-<label className="text-caption text-on-surface-variant leading-tight" for="terms">
+<label className="text-caption text-on-surface-variant leading-tight" htmlFor="terms">
                                 I agree to the <a className="text-primary hover:underline font-medium" href="#">Terms of Service</a> and <a className="text-primary hover:underline font-medium" href="#">Privacy Policy</a>.
                             </label>
 </div>

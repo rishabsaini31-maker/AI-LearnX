@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Award, Video, TrendingUp, FolderGit2, Star, 
@@ -15,7 +16,7 @@ const RESOURCES_MENU = [
   { title: "Certificates", description: "Access and download your earned course, project, and internship certificates with QR verification.", icon: Award, href: "#" },
   { title: "Live Sessions", description: "Join interactive mentor sessions, participate in coding workshops, and stay ahead.", icon: Video, href: "#" },
   { title: "Stipend Wall", description: "Meet our top-performing interns who secured stipend-based internship opportunities.", icon: TrendingUp, href: "#" },
-  { title: "Student Projects", description: "Explore real-world projects built by AI LearnX students with live demos.", icon: FolderGit2, href: "#" },
+  { title: "Student Projects", description: "Explore real-world projects built by AI LearnX students with live demos.", icon: FolderGit2, href: "/projects" },
   { title: "Success Stories", description: "Discover inspiring student journeys, career transformations, and industry placements.", icon: Star, href: "#" },
   { title: "Testimonials", description: "Read authentic reviews and experiences shared by students, interns, and mentors.", icon: MessageSquare, href: "#" },
   { title: "Mentor Chat", description: "Connect directly with experienced mentors for personalized guidance and support.", icon: GraduationCap, href: "#" },
@@ -31,8 +32,10 @@ const EVENTS_MENU = [
 ]
 
 export function MegaMenuNav() {
+  const pathname = usePathname()
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement>(null)
+  const isLoggedIn = false // Mock state for logged out
 
   // Close menu on click outside or escape key
   useEffect(() => {
@@ -62,8 +65,8 @@ export function MegaMenuNav() {
     >
       <div className="flex justify-between items-center px-margin-desktop h-full w-full max-w-container-max mx-auto">
         <div className="flex items-center gap-12">
-          <Link href="/" className="font-headline-md text-headline-md font-bold text-on-background">
-            AI LearnX
+          <Link href="/" className="flex items-center">
+            <Image src="/logo1.PNG" alt="AI LearnX Logo" width={240} height={68} className="object-contain" priority />
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,9 +100,39 @@ export function MegaMenuNav() {
               </button>
             </div>
 
-            <Link href="/our-credibility" className="px-3 font-body-md text-on-background/70 hover:text-on-background transition-colors duration-200" onMouseEnter={() => setActiveMenu(null)}>Our Credibility</Link>
-            <Link href="#" className="px-3 font-body-md text-on-background/70 hover:text-on-background transition-colors duration-200" onMouseEnter={() => setActiveMenu(null)}>Projects</Link>
-            <Link href="#" className="px-3 font-body-md text-on-background font-bold border-b-2 border-on-background pb-1 ml-3" onMouseEnter={() => setActiveMenu(null)}>Intern Portal</Link>
+            <Link 
+              href="/our-credibility" 
+              className={`px-3 font-body-md transition-colors duration-200 ${
+                pathname === '/our-credibility' 
+                  ? 'text-on-background font-bold border-b-2 border-on-background pb-1' 
+                  : 'text-on-background/70 hover:text-on-background'
+              }`} 
+              onMouseEnter={() => setActiveMenu(null)}
+            >
+              Our Credibility
+            </Link>
+            <Link 
+              href="/projects" 
+              className={`px-3 font-body-md transition-colors duration-200 ${
+                pathname === '/projects' 
+                  ? 'text-on-background font-bold border-b-2 border-on-background pb-1' 
+                  : 'text-on-background/70 hover:text-on-background'
+              }`} 
+              onMouseEnter={() => setActiveMenu(null)}
+            >
+              Projects
+            </Link>
+            <Link 
+              href="/intern-portal" 
+              className={`px-3 font-body-md transition-colors duration-200 ${
+                pathname === '/intern-portal' 
+                  ? 'text-on-background font-bold border-b-2 border-on-background pb-1' 
+                  : 'text-on-background/70 hover:text-on-background'
+              }`} 
+              onMouseEnter={() => setActiveMenu(null)}
+            >
+              Intern Portal
+            </Link>
           </nav>
         </div>
 
@@ -109,14 +142,23 @@ export function MegaMenuNav() {
             <button className="material-symbols-outlined hover:text-on-background transition-colors" aria-label="Notifications">notifications</button>
             <button className="material-symbols-outlined hover:text-on-background transition-colors" aria-label="Shopping Cart">shopping_cart</button>
           </div>
-          <div className="h-10 w-10 rounded-full overflow-hidden border border-outline-variant relative cursor-pointer hover:ring-2 ring-primary/20 transition-all">
-            <Image 
-              className="w-full h-full object-cover" 
-              alt="User Profile" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYM5jonINC_Yx3q5ZK9X-sLw07T91SJxOtEdUKOKm2qy5gWuZ085lvOHKc40undqFg0nNuF37kFvA0mzfaXEMlBc5QkZutcGXigHPnTvy7r7BVaLMJsOM4MCTKs1r5EJq3haY1vjecnTTgsRFBTNri0o4PVzwC5KHkBdDMeYbir_-PelwFsz1UGaAdIyci8zo41JnmNg8ZfBMj6J8fpNTLF1TYh7rA4Ifu-lVsYThc_YYrbAAL5Tw48w" 
-              fill
-            />
-          </div>
+          {isLoggedIn ? (
+            <div className="h-10 w-10 rounded-full overflow-hidden border border-outline-variant relative cursor-pointer hover:ring-2 ring-primary/20 transition-all">
+              <Image 
+                className="w-full h-full object-cover" 
+                alt="User Profile" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYM5jonINC_Yx3q5ZK9X-sLw07T91SJxOtEdUKOKm2qy5gWuZ085lvOHKc40undqFg0nNuF37kFvA0mzfaXEMlBc5QkZutcGXigHPnTvy7r7BVaLMJsOM4MCTKs1r5EJq3haY1vjecnTTgsRFBTNri0o4PVzwC5KHkBdDMeYbir_-PelwFsz1UGaAdIyci8zo41JnmNg8ZfBMj6J8fpNTLF1TYh7rA4Ifu-lVsYThc_YYrbAAL5Tw48w" 
+                fill
+              />
+            </div>
+          ) : (
+            <Link 
+              href="/login" 
+              className="px-6 py-2.5 bg-black text-white rounded-xl font-label-md font-bold hover:bg-gray-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
 

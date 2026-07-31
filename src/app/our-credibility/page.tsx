@@ -29,12 +29,12 @@ const DOCUMENTS = [
   { title: "GST Registration", desc: "Goods and Services Tax (GST) Registration", type: "LEGAL & REGISTRATION" },
   { title: "Certificate of Incorporation (COI)", desc: "Company Incorporation", type: "LEGAL & REGISTRATION" },
   { title: "MSME Registration", desc: "Micro, Small & Medium Enterprises (MSME)", type: "LEGAL & REGISTRATION" },
-  { title: "Training Certificate (Sample)", desc: "Sample training certificate issued by elevanceskills", type: "SAMPLE DOCUMENTS" },
-  { title: "Internship Certificate (Sample)", desc: "Sample internship certificate from elevanceskills", type: "SAMPLE DOCUMENTS" },
-  { title: "Experience Letter (Sample)", desc: "Sample experience letter from elevanceskills", type: "SAMPLE DOCUMENTS" },
-  { title: "Letter of Recommendation (Sample)", desc: "Sample letter of recommendation from elevanceskills", type: "SAMPLE DOCUMENTS" },
-  { title: "Training Offer Letter (Sample)", desc: "Sample Training Offer Letter from elevanceskills", type: "SAMPLE DOCUMENTS" },
-  { title: "Intern Offer letter (Sample)", desc: "Sample Intern Offer letter from elevanceskills", type: "SAMPLE DOCUMENTS" },
+  { title: "Training Certificate (Sample)", desc: "Sample training certificate issued by AI LearnX", type: "SAMPLE DOCUMENTS" },
+  { title: "Internship Certificate (Sample)", desc: "Sample internship certificate from AI LearnX", type: "SAMPLE DOCUMENTS" },
+  { title: "Experience Letter (Sample)", desc: "Sample experience letter from AI LearnX", type: "SAMPLE DOCUMENTS" },
+  { title: "Letter of Recommendation (Sample)", desc: "Sample letter of recommendation from AI LearnX", type: "SAMPLE DOCUMENTS" },
+  { title: "Training Offer Letter (Sample)", desc: "Sample Training Offer Letter from AI LearnX", type: "SAMPLE DOCUMENTS" },
+  { title: "Intern Offer letter (Sample)", desc: "Sample Intern Offer letter from AI LearnX", type: "SAMPLE DOCUMENTS" },
 ]
 
 export default function OurCredibilityPage() {
@@ -57,7 +57,7 @@ export default function OurCredibilityPage() {
           </div>
           <h1 className="font-display-lg-mobile md:font-display-lg text-primary leading-tight font-bold mb-6 animate-in fade-in slide-in-from-bottom-4 delay-100">
             Learn. Build. Grow.<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tertiary-container to-primary">Elevate Your Skills with ElevanceSkills</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tertiary-container to-primary">Elevate Your Skills with AI LearnX</span>
           </h1>
           <p className="text-secondary font-body-lg max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 delay-200">
             Redefining industrial training for the next generation — empowering students to turn learning into real-world innovation. Trusted by learners from 50,000+ Students worldwide to kickstart their careers.
@@ -68,7 +68,7 @@ export default function OurCredibilityPage() {
               { icon: Users, label: "Students Trained", value: "40,000+" },
               { icon: BookOpen, label: "Industry Courses", value: "50+" },
               { icon: TrendingUp, label: "Placement Success", value: "95%" },
-              { icon: Award, label: "Avg. Internship Stipend", value: "₹3000" },
+               { icon: Award, label: "Avg. Internship Stipend", value: "₹10,000" },
             ].map((stat, i) => (
               <div key={i} className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant shadow-sm flex flex-col items-center">
                 <stat.icon className="w-8 h-8 text-primary mb-4" />

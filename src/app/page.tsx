@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { ScrollVideoScrub } from '@/components/home/scroll-video-scrub'
 import { MegaMenuNav } from '@/components/navigation/mega-menu-nav'
 import { Footer } from '@/components/layout/footer'
-
+import { SuccessStories } from '@/components/home/success-stories'
+import { Comparison } from '@/components/home/comparison'
+import { WhatYouGet } from '@/components/home/what-you-get'
 export default function Home() {
   return (
     <div className="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
@@ -36,17 +38,19 @@ export default function Home() {
 </div>
 <span className="text-caption font-caption opacity-50">app.py — main_feature</span>
 </div>
-<pre className="font-mono text-sm leading-relaxed text-on-surface-variant"><span className="text-secondary">def</span> <span className="text-primary">optimize_workflow</span>(ai_agent, tasks):
-    <span className="text-on-surface-variant/60"># AI LearnX Vibe Coding Pattern</span>
-    results = []
-    <span className="text-secondary">for</span> task <span className="text-secondary">in</span> tasks:
-        insight = ai_agent.analyze(task)
-        results.append(insight.code)
-    <span className="text-secondary">return</span> results</pre>
+<pre className="font-mono text-sm leading-relaxed text-on-surface-variant overflow-x-auto">
+  <span className="text-secondary">def</span> <span className="text-primary">optimize_workflow</span>(ai_agent, tasks):{"\n"}
+  {"    "}<span className="text-on-surface-variant/60"># AI LearnX Vibe Coding Pattern</span>{"\n"}
+  {"    "}results = []{"\n"}
+  {"    "}<span className="text-secondary">for</span> task <span className="text-secondary">in</span> tasks:{"\n"}
+  {"        "}insight = ai_agent.analyze(task){"\n"}
+  {"        "}results.append(insight.code){"\n"}
+  {"    "}<span className="text-secondary">return</span> results
+</pre>
 </div>
-<div className="absolute -bottom-20 -right-10 glass-card rounded-2xl p-6 floating [animation-delay:2s] w-64 z-20">
-<div className="flex items-center gap-6 mb-3">
-<div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<div className="absolute -bottom-10 right-0 glass-card rounded-2xl p-5 floating [animation-delay:2s] w-60 z-20 shadow-xl border border-white/60">
+<div className="flex items-center gap-4 mb-3">
+<div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
 <span className="material-symbols-outlined text-primary">rocket_launch</span>
 </div>
 <div>
@@ -321,6 +325,10 @@ export default function Home() {
 </div>
 </div>
 </section>
+
+<SuccessStories />
+<Comparison />
+<WhatYouGet />
 
 <section className="py-16 px-gutter max-w-7xl mx-auto">
 <div className="text-center mb-16">

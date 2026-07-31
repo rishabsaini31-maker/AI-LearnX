@@ -8,7 +8,7 @@ export function Footer() {
         <div className="col-span-2 lg:col-span-2 mb-8 lg:mb-0 pr-8">
           <a className="font-headline-md text-headline-md font-bold text-on-background block mb-6" href="/">AI LearnX</a>
           <p className="text-on-background/70 font-body-md leading-relaxed mb-6">
-            ElevanceSkills is redefining industrial training for the next generation of learners and professionals. Innovating, empowering, and transforming the way skills are built.
+            AI LearnX is redefining industrial training for the next generation of learners and professionals. Innovating, empowering, and transforming the way skills are built.
           </p>
           <div className="text-on-background/70 font-body-md">
             <p className="mb-2 flex items-center gap-2">
@@ -17,7 +17,7 @@ export function Footer() {
             </p>
             <p className="mb-2 flex items-center gap-2">
               <span className="material-symbols-outlined text-[18px]">mail</span>
-              training@elevanceskills.com
+              training@ailearnx.com
             </p>
             <p className="flex items-start gap-2">
               <span className="material-symbols-outlined text-[18px] mt-1">location_on</span>
@@ -69,7 +69,7 @@ export function Footer() {
       
       <div className="mt-16 pt-8 border-t border-on-background/10 px-margin-desktop max-w-container-max mx-auto text-center">
         <p className="text-on-background/50 font-body-md text-sm">
-          © 2026 ElevanceSkills Technology Private Limited. All Rights Reserved. Empowering students with real-world skills and experience.
+          © 2026 AI LearnX Technology Private Limited. All Rights Reserved. Empowering students with real-world skills and experience.
         </p>
       </div>
     </footer>

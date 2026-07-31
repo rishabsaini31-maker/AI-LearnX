@@ -71,7 +71,16 @@ export function ScrollVideoScrub({ src }: { src: string }) {
           preload="auto"
         />
         
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
+        
+        <div className="absolute inset-0 flex flex-col justify-start pt-56 px-6 md:px-10 lg:px-24 pointer-events-none z-20">
+          <div className="max-w-3xl">
+            <h1 className="font-display-lg text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight drop-shadow-lg">
+              Learn. Build. <span className="text-primary drop-shadow-lg">Earn.</span>
+            </h1>
+          </div>
+        </div>
         
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 animate-bounce pointer-events-none flex flex-col items-center gap-2">
           <span className="text-sm tracking-widest uppercase">Scroll down</span>

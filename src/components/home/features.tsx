@@ -7,14 +7,14 @@ import {
 const FEATURES = [
   {
     title: "Performance-Based Stipends",
-    subtitle: "Earn up to ₹3,000 based on your performance",
+    subtitle: "Earn up to ₹10,000 based on your performance",
     icon: BadgeIndianRupee,
     points: [
       "Paid for actual project contributions, not attendance",
       "No dummy certificates or recorded-only internships",
       "Stipend linked to skills, delivery & impact",
       "Direct mentor evaluation on real-world output",
-      "Up to ₹3,000 based on performance milestones",
+      "Up to ₹10,000 based on performance milestones",
       "Top performers get hiring & referral support"
     ]
   },
@@ -158,7 +158,7 @@ export function FeaturesGrid() {
           What You Actually Get
         </h2>
         <p className="text-secondary font-body-lg max-w-3xl mx-auto leading-relaxed">
-          With ElevanceSkills: A transparent, skill-first internship experience built on real projects, mentorship, and performance-based outcomes.
+          With AI LearnX: A transparent, skill-first internship experience built on real projects, mentorship, and performance-based outcomes.
         </p>
       </div>
 
