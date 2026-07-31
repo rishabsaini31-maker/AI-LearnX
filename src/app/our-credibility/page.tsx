@@ -50,7 +50,7 @@ export default function OurCredibilityPage() {
         </div>
 
         {/* Hero Section */}
-        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-24">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto text-center mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-outline-variant text-primary font-label-sm uppercase tracking-wider mb-8 animate-in fade-in slide-in-from-bottom-4">
             <span className="material-symbols-outlined text-[18px]">rocket_launch</span>
             From Skills to Success
@@ -80,7 +80,7 @@ export default function OurCredibilityPage() {
         </section>
 
         {/* Leadership & Stats Section */}
-        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             {/* Leadership Board */}
@@ -191,7 +191,7 @@ export default function OurCredibilityPage() {
         </section>
 
         {/* Featured Projects */}
-        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mb-24">
           <div className="text-center mb-12">
             <h2 className="font-display-lg-mobile md:text-[40px] text-primary font-bold mb-4">Featured Student Projects</h2>
             <p className="text-secondary font-body-md max-w-2xl mx-auto">Explore real-world projects built by our students with mentor guidance, showcasing their technical expertise and problem-solving skills.</p>
@@ -230,7 +230,7 @@ export default function OurCredibilityPage() {
         </section>
 
         {/* Verified Documents */}
-        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24 bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/50">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mb-24 bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/50">
           <div className="text-center mb-12">
             <ShieldCheck className="w-12 h-12 text-tertiary-fixed-dim mx-auto mb-4" />
             <h2 className="font-display-lg-mobile md:text-[40px] text-primary font-bold mb-4">Verified & Government Recognised</h2>

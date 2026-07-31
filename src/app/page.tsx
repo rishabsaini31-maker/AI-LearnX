@@ -1,84 +1,400 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+import { ScrollVideoScrub } from '@/components/home/scroll-video-scrub'
 import { MegaMenuNav } from '@/components/navigation/mega-menu-nav'
 import { Footer } from '@/components/layout/footer'
-import { ComparisonSection } from '@/components/home/comparison'
-import { FeaturesGrid } from '@/components/home/features'
 
 export default function Home() {
   return (
-    <div className="font-body-md text-body-md bg-background text-on-background min-h-screen flex flex-col">
+    <div className="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
       <MegaMenuNav />
+      <ScrollVideoScrub src="/hero-video.mp4" />
 
-      {/* Hero Section */}
-      <main className="flex-grow flex flex-col items-center justify-center pt-32 pb-20 px-margin-mobile md:px-margin-desktop relative overflow-hidden">
-        
-        {/* Abstract Background Shapes */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full overflow-hidden pointer-events-none -z-10 flex items-center justify-center">
-          <div className="w-[800px] h-[800px] bg-tertiary-fixed/30 blur-[120px] rounded-full absolute -top-40 -left-40"></div>
-          <div className="w-[600px] h-[600px] bg-secondary-container/30 blur-[150px] rounded-full absolute bottom-0 right-0"></div>
-        </div>
+<section className="relative py-16 px-gutter overflow-hidden flex flex-col justify-center">
 
-        <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Text Content */}
-          <div className="flex flex-col gap-6 animate-in slide-in-from-bottom-8 duration-700 fade-in">
-            <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight font-bold">
-              Get Mentored.<br/>
-              Build Projects.<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tertiary-container to-primary">Get Ahead.</span>
-            </h1>
-            
-            <p className="text-secondary font-body-lg text-body-lg leading-relaxed max-w-xl">
-              ElevanceSkills is a Real-Time Project Training Platform where students gain practical experience by building industry-oriented projects with mentor support, guided implementation, and hands-on learning.
+
+<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<div className="space-y-6">
+<span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full font-label-md text-label-md">Next-Gen Education Platform</span>
+<h1 className="font-display-lg text-display-lg text-on-background">Master AI <span className="gradient-text">Vibe Coding</span> &amp; Build Real Projects</h1>
+<p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Learn practical software development by building real-world applications with mentor guidance, AI-powered workflows, and project-based learning.
+                </p>
+<div className="flex flex-wrap gap-6">
+<button className="primary-btn text-white px-10 py-6 rounded-xl font-label-md text-label-md font-bold shadow-lg">Start Learning</button>
+<button className="bg-surface border border-outline-variant/30 text-on-surface px-10 py-6 rounded-xl font-label-md text-label-md font-bold hover:bg-surface-container-low transition-all">Explore Programs</button>
+</div>
+</div>
+<div className="relative hidden lg:block">
+<div className="absolute -top-10 -left-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+<div className="glass-card rounded-2xl p-6 floating relative z-10">
+<div className="flex items-center gap-3 border-b border-outline-variant/20 pb-3 mb-3">
+<div className="flex gap-1">
+<div className="w-3 h-3 rounded-full bg-red-400"></div>
+<div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div className="w-3 h-3 rounded-full bg-green-400"></div>
+</div>
+<span className="text-caption font-caption opacity-50">app.py — main_feature</span>
+</div>
+<pre className="font-mono text-sm leading-relaxed text-on-surface-variant"><span className="text-secondary">def</span> <span className="text-primary">optimize_workflow</span>(ai_agent, tasks):
+    <span className="text-on-surface-variant/60"># AI LearnX Vibe Coding Pattern</span>
+    results = []
+    <span className="text-secondary">for</span> task <span className="text-secondary">in</span> tasks:
+        insight = ai_agent.analyze(task)
+        results.append(insight.code)
+    <span className="text-secondary">return</span> results</pre>
+</div>
+<div className="absolute -bottom-20 -right-10 glass-card rounded-2xl p-6 floating [animation-delay:2s] w-64 z-20">
+<div className="flex items-center gap-6 mb-3">
+<div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span className="material-symbols-outlined text-primary">rocket_launch</span>
+</div>
+<div>
+<p className="font-label-md text-label-md font-bold">Project Live</p>
+<p className="text-caption font-caption text-on-surface-variant">SaaS Dashboard v1.2</p>
+</div>
+</div>
+<div className="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div className="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section className="bg-surface-container-lowest border-y border-outline-variant/20 py-10">
+<div className="max-w-7xl mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+<div>
+<p className="font-headline-md text-headline-md text-primary font-bold">10K+</p>
+<p className="font-label-md text-label-md text-on-surface-variant">Global Students</p>
+</div>
+<div>
+<p className="font-headline-md text-headline-md text-primary font-bold">200+</p>
+<p className="font-label-md text-label-md text-on-surface-variant">Industry Projects</p>
+</div>
+<div>
+<p className="font-headline-md text-headline-md text-primary font-bold">50+</p>
+<p className="font-label-md text-label-md text-on-surface-variant">Expert Mentors</p>
+</div>
+<div>
+<p className="font-headline-md text-headline-md text-primary font-bold">95%</p>
+<p className="font-label-md text-label-md text-on-surface-variant">Completion Rate</p>
+</div>
+</div>
+</section>
+
+<section className="py-16 px-gutter max-w-7xl mx-auto">
+<div className="text-center mb-16">
+<h2 className="font-headline-lg text-headline-lg text-on-background mb-6">Engineered for Success</h2>
+<p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Our ecosystem combines cutting-edge AI tools with human mentorship to accelerate your development career.</p>
+</div>
+<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+<div className="md:col-span-2 lg:row-span-2 glass-card rounded-[32px] p-10 flex flex-col justify-between overflow-hidden relative group">
+<div className="relative z-10">
+<div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span className="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+</div>
+<h3 className="font-title-lg text-title-lg mb-3">AI Vibe Coding</h3>
+<p className="font-body-md text-body-md text-on-surface-variant">Master the future of programming. Learn how to steer LLMs, prompt engineering for complex architectures, and maintain code quality with AI assistance.</p>
+</div>
+<div className="mt-16 relative z-10">
+<div className="flex -space-x-4">
+<div className="w-12 h-12 rounded-full border-4 border-white bg-surface-dim" data-alt="A close-up professional portrait of a software engineer in a modern workspace, natural soft lighting, blurred office background." style={{ backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXE3vJiHbHUr0dhTXRhOS_48xdrHOud0c-r_7Nn7tEQBq99y4yEADs6x5D6KLd8DBTMbhUALf_DPSP7yC5EyLG33LneYhCFs1vQ1I1USpDC9sdvccPhyxRcIIHTYd4Lc34Im-W1dCWVQrpe6IiHxmbZZ9W4cs774IZFUv8SZ7Z2qDPtsk5OtoZdVD3QGAQLKefqj-kVkngxtwiy8wf1gWja3eglSSy8hWdePAVrcxyzXyVNjXjllj0')` }}></div>
+<div className="w-12 h-12 rounded-full border-4 border-white bg-surface-dim" data-alt="A portrait of a diverse woman working in tech, smiling confidently, soft-focus tech laboratory background, high-key lighting." style={{ backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBA3_PXJn-qZGG4KWiLsLQZql-oSsytYhXq0wnDJuNeWM4cpBQyUl-ZoFpe5o1TwWxsyVWVNCnq8me_RgzW862KTBP2aUMh_EN-gnHITLafPCl9YaAyBOpKNfW11ZhwsKdtW3oD6tK75NiI3W1oXHGesBV0ET0OIPcQafD77Zu4IUBM2bZWtO-nXIqb4K61PANYbKE8KP9PSA011IHRg-7q-zffOVBQrcl-TN71pF1h8GCQg1ItbILu')` }}></div>
+<div className="w-12 h-12 rounded-full border-4 border-white bg-surface-dim" data-alt="A side profile of a creative developer wearing headphones, glowing screen light reflecting on face, minimalist studio setup." style={{ backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwCNBE96D63csLJDeYRxrDbEHsLJGuTf4FQOhrpLu1NroPlE3zcNfm7n68TDX-FJ071nI21_5tphsJM26lKuO05rrvRa4RYDqL_62-R-yVEsxSroMJ9vyJAA6y9LBqXMDPHFzJSjrE78weNnpscEdqWPw9kd5JcyPXhgFLE5L4GHlmy2WOQMXkw3rrFCYGjeQuOamhIeHTq0b9QDEvKuuK1wFTCDGo1wTHSspE_qUehEaVHcbOgf52')` }}></div>
+</div>
+<p className="text-caption font-caption mt-3 text-on-surface-variant">Join 5,000+ developers mastering AI tools.</p>
+</div>
+<div className="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+
+<div className="glass-card rounded-[32px] p-6 bento-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<span className="material-symbols-outlined text-secondary mb-3">rocket</span>
+<h4 className="font-label-md text-label-md font-bold mb-1">Real Projects</h4>
+<p className="text-caption font-caption text-on-surface-variant">Build production-ready apps from day one.</p>
+</div>
+<div className="glass-card rounded-[32px] p-6 bento-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<span className="material-symbols-outlined text-tertiary mb-3">person_search</span>
+<h4 className="font-label-md text-label-md font-bold mb-1">Mentor Reviews</h4>
+<p className="text-caption font-caption text-on-surface-variant">1-on-1 code reviews from industry experts.</p>
+</div>
+<div className="glass-card rounded-[32px] p-6 bento-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<span className="material-symbols-outlined text-primary mb-3">work</span>
+<h4 className="font-label-md text-label-md font-bold mb-1">Interview Prep</h4>
+<p className="text-caption font-caption text-on-surface-variant">Master system design and DSA with AI.</p>
+</div>
+<div className="glass-card rounded-[32px] p-6 bento-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<span className="material-symbols-outlined text-secondary mb-3">school</span>
+<h4 className="font-label-md text-label-md font-bold mb-1">Certificates</h4>
+<p className="text-caption font-caption text-on-surface-variant">Verifiable proof of your tech expertise.</p>
+</div>
+
+<div className="md:col-span-2 glass-card rounded-[32px] p-10 flex items-center gap-10">
+<div className="hidden sm:block">
+<img className="w-32 h-32 rounded-2xl object-cover" data-alt="A clean, minimalist 3D rendering of an abstract workspace with a laptop, a notebook, and a small green plant, reflecting a calm learning environment with soft pastel blue and purple tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuDwlKkja83_8zc69F1J3mtrlzpd4jwrZvUNKya7ROM_Nf3sDVAGYhJKyBXQ-MHzCEKKwOnYu8vNCeGPwt_mvbfvrnKC9pRnfMsG-XJPAFilMtbfkZlbaw2FQsLQ1ar55F4pyoyzZ_x84kou_0nrHg2tykgJ1BgNXjXcM0ew_PsaI_h1HtMokZn298xW95PtrjZv3xx7eSYRw2rNnjYT8SM_RlMPXyBTEV4bAep6Usx1wFF-Cvkcjg"/>
+</div>
+<div>
+<h3 className="font-title-lg text-title-lg mb-3">Internship Pipeline</h3>
+<p className="font-body-md text-body-md text-on-surface-variant mb-6">Top performers get direct access to our 50+ hiring partners and internal startup lab.</p>
+<button className="text-primary font-bold hover:underline">See how it works →</button>
+</div>
+</div>
+</div>
+</section>
+
+<section className="py-16 bg-surface-container-low px-gutter overflow-hidden">
+<div className="max-w-7xl mx-auto">
+<h2 className="font-headline-lg text-headline-lg text-center mb-16">Your Road to <span className="text-primary">Industry Ready</span></h2>
+<div className="relative py-6">
+
+<div className="hidden lg:flex justify-between relative">
+<div className="absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant/30 -translate-y-1/2"></div>
+<div className="absolute top-1/2 left-0 h-[2px] timeline-line -translate-y-1/2 transition-all duration-1000 w-[75%]"></div>
+
+<div className="relative flex flex-col items-center gap-6 z-10 w-32">
+<div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+<p className="font-label-md text-label-md font-bold text-center">Enroll</p>
+</div>
+
+<div className="relative flex flex-col items-center gap-6 z-10 w-32">
+<div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+<p className="font-label-md text-label-md font-bold text-center">Learn</p>
+</div>
+
+<div className="relative flex flex-col items-center gap-6 z-10 w-32">
+<div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</div>
+<p className="font-label-md text-label-md font-bold text-center">Build</p>
+</div>
+
+<div className="relative flex flex-col items-center gap-6 z-10 w-32">
+<div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold">4</div>
+<p className="font-label-md text-label-md font-bold text-center">Submit</p>
+</div>
+
+<div className="relative flex flex-col items-center gap-6 z-10 w-32">
+<div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold">5</div>
+<p className="font-label-md text-label-md font-bold text-center">Review</p>
+</div>
+
+<div className="relative flex flex-col items-center gap-6 z-10 w-32">
+<div className="w-12 h-12 rounded-full bg-surface text-primary border-2 border-primary flex items-center justify-center font-bold">6</div>
+<p className="font-label-md text-label-md font-bold text-center">Deploy</p>
+</div>
+</div>
+
+<div className="lg:hidden space-y-6">
+<div className="flex items-center gap-6 p-6 glass-card rounded-xl">
+<div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm">1</div>
+<p className="font-label-md text-label-md font-bold">Enroll &amp; Setup Environment</p>
+</div>
+<div className="flex items-center gap-6 p-6 glass-card rounded-xl">
+<div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm">2</div>
+<p className="font-label-md text-label-md font-bold">Build &amp; AI Peer Review</p>
+</div>
+<div className="flex items-center gap-6 p-6 glass-card rounded-xl opacity-50">
+<div className="w-8 h-8 rounded-full bg-outline text-white flex items-center justify-center text-sm">3</div>
+<p className="font-label-md text-label-md font-bold">Deploy to Industry Lab</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section className="py-16 px-gutter max-w-7xl mx-auto">
+<div className="flex justify-between items-end mb-16">
+<div>
+<h2 className="font-headline-lg text-headline-lg text-on-background">Explore Our Programs</h2>
+<p className="font-body-md text-body-md text-on-surface-variant">Deep-dive cohorts starting every week.</p>
+</div>
+<button className="hidden md:flex items-center gap-3 text-primary font-bold group">
+                View all courses <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+<div className="bg-surface-container-lowest rounded-3xl overflow-hidden bento-shadow group border border-transparent hover:border-primary/20 transition-all">
+<div className="h-56 relative overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant, stylized digital illustration representing AI software engineering, featuring neon circuit lines, a glowing brain-like computer chip, and modern glass UI elements on a dark blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAooK2IPIDmuR-slW5d9ot5W8YgiKrG1RjdYgHPzqw7E-ViTLCAVTC_gl1UEa88_DeuRRo19xwjTzxYkzOh2l5KnzgjQLywAaxUTYskxiBZc03FltzFzWnH-tino6HXcfFs7l5eV6yT55QVi9ah-2s4evGFslU9ZvJxLRr-k6IM3NljmK5THsqm0QPtU7Hwbq87QLUyDXD7c9VRlrDz-5w8aX-gBh6KoQxhpBRdvJI4WkChsQtx0hls"/>
+<div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-lg text-caption font-bold">Bestseller</div>
+</div>
+<div className="p-10">
+<div className="flex justify-between items-center mb-3">
+<span className="text-caption font-caption text-secondary font-bold uppercase tracking-wider">AI Engineering</span>
+<div className="flex items-center gap-1">
+<span className="material-symbols-outlined text-sm text-yellow-500" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+<span className="text-caption font-bold">4.9</span>
+</div>
+</div>
+<h3 className="font-title-lg text-title-lg mb-6">Mastering Vibe Coding with GPT-4o</h3>
+<p className="text-caption font-caption text-on-surface-variant mb-10">Build 5 production apps including a custom SaaS and a real-time AI agent using advanced prompting techniques.</p>
+<div className="flex items-center justify-between border-t border-outline-variant/20 pt-6">
+<div>
+<p className="text-caption opacity-60">Starting at</p>
+<p className="font-title-lg font-bold text-on-background">$499</p>
+</div>
+<button className="bg-primary/5 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Enroll Now</button>
+</div>
+</div>
+</div>
+
+<div className="bg-surface-container-lowest rounded-3xl overflow-hidden bento-shadow group border border-transparent hover:border-primary/20 transition-all">
+<div className="h-56 relative overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A minimalist 3D visual of a futuristic mobile application dashboard with floating glass windows and vibrant accent colors, high-key lighting, soft shadows, pristine white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuvhcXAodMQGEPawUqweSanD-SSKv6wqYsiLxLxqIxEiiKXG5EbdYJclbS8i94Fe5WBAQPX6RtJi5EqaxkT4iGoymm5WrA3bSS_BBZAdPj2kzWQbNcIlcHot3FE_rIOJKEW4iac93g4u2PZRWHmvSophfabxOXAyldS0LCZTyS8qviWMklIZlMPnNU8_ZsuXSKkf5HvZ2O8XB1yDo3zdn1dF187cH1x4o7DQGYJCD0VdK-9FNJFOCR"/>
+<div className="absolute top-4 left-4 bg-tertiary text-white px-3 py-1 rounded-lg text-caption font-bold">Advanced</div>
+</div>
+<div className="p-10">
+<div className="flex justify-between items-center mb-3">
+<span className="text-caption font-caption text-tertiary font-bold uppercase tracking-wider">Fullstack Dev</span>
+<div className="flex items-center gap-1">
+<span className="material-symbols-outlined text-sm text-yellow-500" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+<span className="text-caption font-bold">4.8</span>
+</div>
+</div>
+<h3 className="font-title-lg text-title-lg mb-6">The Modern T3 Stack: AI-First Approach</h3>
+<p className="text-caption font-caption text-on-surface-variant mb-10">Leverage Next.js, TypeScript, Tailwind and AI tools to build ultra-scalable web architectures from scratch.</p>
+<div className="flex items-center justify-between border-t border-outline-variant/20 pt-6">
+<div>
+<p className="text-caption opacity-60">Starting at</p>
+<p className="font-title-lg font-bold text-on-background">$649</p>
+</div>
+<button className="bg-primary/5 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Enroll Now</button>
+</div>
+</div>
+</div>
+
+<div className="bg-surface-container-lowest rounded-3xl overflow-hidden bento-shadow group border border-transparent hover:border-primary/20 transition-all">
+<div className="h-56 relative overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional creative studio setting showing a sleek laptop screen displaying a complex data visualization project with deep purple and cyan neon colors, soft ambient studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTEHfc35j0o-lz9f2TT4azGR4hQG7-m2QRtByiP5xyfFjKGCWVJookiWlFIlbZRW4-NrfSvOZg4vF3RA-1cPD0Sc3TRyF3oAVMKgnYPHID3OeWVy8vR2-NiiOLo2RC0i30xLmSEDMyBn_WQOOe5sE_GBVgpuHI4b5Nw9ifcqo_zkBkN7A7Sf8aqNv8PNaOqA6tJmqX6byhOPkFSxyUTcCRXeVeJU1Z5m8gLyV539Cdn0fIBBqaPwtr"/>
+<div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-lg text-caption font-bold">Foundation</div>
+</div>
+<div className="p-10">
+<div className="flex justify-between items-center mb-3">
+<span className="text-caption font-caption text-secondary font-bold uppercase tracking-wider">Python + AI</span>
+<div className="flex items-center gap-1">
+<span className="material-symbols-outlined text-sm text-yellow-500" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+<span className="text-caption font-bold">4.9</span>
+</div>
+</div>
+<h3 className="font-title-lg text-title-lg mb-6">Backend Mastery &amp; AI Orchestration</h3>
+<p className="text-caption font-caption text-on-surface-variant mb-10">Build powerful APIs and learn how to chain LLMs for complex business logic using LangChain and FastAPI.</p>
+<div className="flex items-center justify-between border-t border-outline-variant/20 pt-6">
+<div>
+<p className="text-caption opacity-60">Starting at</p>
+<p className="font-title-lg font-bold text-on-background">$599</p>
+</div>
+<button className="bg-primary/5 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Enroll Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section className="py-16 bg-on-background text-surface px-gutter">
+<div className="max-w-7xl mx-auto">
+<h2 className="font-headline-lg text-headline-lg mb-16 text-center">Built by our <span className="gradient-text">Graduates</span></h2>
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+<div className="relative group rounded-[32px] overflow-hidden">
+<img className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A premium high-fidelity mockup of a fintech mobile application with a dark mode interface showing trading charts and portfolio analytics, sleek glass texture, and neon blue highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9TGAFj2kxw-aNNAx7o4GIYnkAl8sYQYHwzFQmuUrRlk9aBlexIq7sP2cIa-5jxrecBUrI70jjuqgqHAemNtMavFSwSQsKv-JZuvRGhO7LIye0jlKtuA18nRnkAKKXzE1NfWL_yqkzqYzAq_gOdMhybfE73m_qUN8cCnpHSnFLwKHliKEM4F8P1zYitnpSvnei9JL-NGi7I7K8dAgglQ4ERfULhP-cJWmG9r_UY558E7hk91cP0T9s"/>
+<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<div className="flex gap-3 mb-6">
+<span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg text-caption font-bold">React</span>
+<span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg text-caption font-bold">Supabase</span>
+<span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg text-caption font-bold">OpenAI SDK</span>
+</div>
+<h4 className="font-headline-md text-headline-md">TradeMind AI</h4>
+<p className="font-body-md text-body-md text-surface/70 mt-3">A predictive trading dashboard that uses sentiment analysis on social media to forecast stock trends.</p>
+</div>
+</div>
+<div className="relative group rounded-[32px] overflow-hidden">
+<img className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern web application interface for a creative project management tool, featuring a bento grid layout with task cards, calendars, and a sleek minimalist sidebar with soft purple shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOHjz47v-zwRrlFyynYdJEdHJJTBGfhBtnjJs4RvMgd4YCDnOlt1RIVJKPs29H4ujx04tu4VhrZss7sp5Kn_aQx32ByRPqw24TOjuSBhasV_iO9k07mQiAfBO0UoKWxw5VdoXP5uvgRiPeTdjhGySFPWzcY1OA579Ildun8FdP-q4MW2LJJzLW1zRZaYlzU5EbF5GA1rfJZghp_NHKs1bntop9ws9y2TtMwLLoIf7vPrZbpBsaZieO"/>
+<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<div className="flex gap-3 mb-6">
+<span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg text-caption font-bold">Next.js</span>
+<span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg text-caption font-bold">PostgreSQL</span>
+<span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg text-caption font-bold">HuggingFace</span>
+</div>
+<h4 className="font-headline-md text-headline-md">FlowState</h4>
+<p className="font-body-md text-body-md text-surface/70 mt-3">An AI-powered productivity tool that automatically categorizes tasks based on user behavior and focus levels.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section className="py-16 px-gutter max-w-7xl mx-auto">
+<div className="text-center mb-16">
+<h2 className="font-headline-lg text-headline-lg mb-6">Simple, Value-Driven Pricing</h2>
+<p className="font-body-lg text-body-lg text-on-surface-variant">Choose the path that fits your career goals.</p>
+</div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+<div className="p-10 rounded-[32px] border border-outline-variant/30 flex flex-col">
+<div className="mb-10">
+<h3 className="font-title-lg text-title-lg mb-1">Starter</h3>
+<p className="text-caption text-on-surface-variant">For curious beginners</p>
+<div className="mt-6">
+<span className="text-4xl font-bold">$199</span>
+<span className="text-on-surface-variant">/course</span>
+</div>
+</div>
+<ul className="space-y-6 mb-16 flex-grow">
+<li className="flex items-center gap-3 text-body-md"><span className="material-symbols-outlined text-green-500">check_circle</span> Lifetime Access</li>
+<li className="flex items-center gap-3 text-body-md"><span className="material-symbols-outlined text-green-500">check_circle</span> Community Support</li>
+<li className="flex items-center gap-3 text-body-md opacity-40"><span className="material-symbols-outlined">cancel</span> 1-on-1 Mentorship</li>
+<li className="flex items-center gap-3 text-body-md opacity-40"><span className="material-symbols-outlined">cancel</span> Internship Guarantee</li>
+</ul>
+<button className="w-full border border-primary text-primary py-6 rounded-xl font-bold hover:bg-primary/5">Get Started</button>
+</div>
+
+<div className="p-10 rounded-[32px] border-2 border-primary bg-primary/5 flex flex-col relative scale-105 z-10 shadow-xl">
+<div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-1 rounded-full text-caption font-bold">MOST POPULAR</div>
+<div className="mb-10">
+<h3 className="font-title-lg text-title-lg mb-1">Career Launch</h3>
+<p className="text-caption text-on-surface-variant">Complete bootcamp experience</p>
+<div className="mt-6">
+<span className="text-4xl font-bold">$1,499</span>
+<span className="text-on-surface-variant">/full track</span>
+</div>
+</div>
+<ul className="space-y-6 mb-16 flex-grow">
+<li className="flex items-center gap-3 text-body-md font-bold"><span className="material-symbols-outlined text-primary">verified</span> Weekly Mentor Syncs</li>
+<li className="flex items-center gap-3 text-body-md font-bold"><span className="material-symbols-outlined text-primary">verified</span> Portfolio Development</li>
+<li className="flex items-center gap-3 text-body-md font-bold"><span className="material-symbols-outlined text-primary">verified</span> Resume/LinkedIn Audit</li>
+<li className="flex items-center gap-3 text-body-md font-bold"><span className="material-symbols-outlined text-primary">verified</span> Interview Coaching</li>
+</ul>
+<button className="w-full primary-btn text-white py-6 rounded-xl font-bold">Enroll Now</button>
+</div>
+
+<div className="p-10 rounded-[32px] border border-outline-variant/30 flex flex-col">
+<div className="mb-10">
+<h3 className="font-title-lg text-title-lg mb-1">Pro Membership</h3>
+<p className="text-caption text-on-surface-variant">Ongoing skill growth</p>
+<div className="mt-6">
+<span className="text-4xl font-bold">$49</span>
+<span className="text-on-surface-variant">/month</span>
+</div>
+</div>
+<ul className="space-y-6 mb-16 flex-grow">
+<li className="flex items-center gap-3 text-body-md"><span className="material-symbols-outlined text-green-500">check_circle</span> Unlimited All Courses</li>
+<li className="flex items-center gap-3 text-body-md"><span className="material-symbols-outlined text-green-500">check_circle</span> Private Slack Channels</li>
+<li className="flex items-center gap-3 text-body-md"><span className="material-symbols-outlined text-green-500">check_circle</span> Alpha Tool Beta Testing</li>
+<li className="flex items-center gap-3 text-body-md opacity-40"><span className="material-symbols-outlined">cancel</span> Job Guarantee</li>
+</ul>
+<button className="w-full border border-primary text-primary py-6 rounded-xl font-bold hover:bg-primary/5">Join Pro</button>
+</div>
+</div>
+</section>
+
+<section className="max-w-3xl mx-auto px-gutter mb-16">
+<div className="bg-surface-container-high/50 p-6 rounded-2xl border border-outline-variant/30">
+<p className="text-caption font-caption text-on-surface-variant leading-relaxed">
+<span className="font-bold text-on-surface">Internship Eligibility Disclaimer:</span> Participation in our internship pipeline is merit-based. Students must achieve a minimum project score of 85% and maintain a 90% completion rate across core modules. Placement is subject to interview performance with partner organizations. We provide the path; you bring the performance.
             </p>
-            
-            <p className="text-secondary font-body-md leading-relaxed max-w-xl">
-              Build real-world projects, develop practical skills, and gain industry-relevant experience before entering the job market.
-            </p>
+</div>
+</section>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Link href="#" className="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-sm font-bold text-center hover:opacity-90 active:scale-[0.98] transition-all shadow-md">
-                Explore Real-Time Projects
-              </Link>
-              <Link href="#" className="bg-surface border border-outline-variant text-primary px-8 py-4 rounded-xl font-label-sm font-bold text-center hover:bg-surface-container-low active:scale-[0.98] transition-all">
-                Learn More
-              </Link>
-            </div>
-
-            <div className="mt-8 p-4 bg-tertiary-fixed/30 rounded-xl border border-tertiary-fixed-dim/50">
-              <p className="text-label-sm font-label-sm text-on-tertiary-container leading-relaxed">
-                <span className="font-bold">Free Internship Opportunities</span> are available as an optional benefit after successful project completion.<br/>
-                Risk-free start - full refund within 24 hours.
-              </p>
-              <div className="flex flex-wrap items-center gap-2 mt-3 text-secondary font-label-sm text-[12px] uppercase tracking-wider">
-                <span>Project-based learning</span>
-                <span>•</span>
-                <span>Mentor support</span>
-                <span>•</span>
-                <span>Optional free internship</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/50 animate-in slide-in-from-right-8 duration-700 fade-in delay-150 fill-mode-both">
-            <Image 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" 
-              alt="Students collaborating on projects"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-      </main>
-
-      <ComparisonSection />
-      <FeaturesGrid />
-
-      <Footer />
+<Footer />
     </div>
   )
 }

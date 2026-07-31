@@ -6,7 +6,7 @@ export default function SignUpPage() {
     <div className="font-body-md bg-surface text-on-surface selection:bg-primary selection:text-white min-h-screen flex flex-col">
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant h-20 flex items-center">
-        <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto h-full">
+        <div className="flex justify-between items-center px-margin-desktop w-full max-w-7xl mx-auto h-full">
           <div className="flex items-center gap-12">
             <a className="font-headline-md text-headline-md font-bold text-primary" href="/">AI LearnX</a>
           </div>
