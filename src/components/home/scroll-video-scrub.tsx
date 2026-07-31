@@ -71,7 +71,7 @@ export function ScrollVideoScrub({ src }: { src: string }) {
           preload="auto"
         />
         
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-background"></div>
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
         
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 animate-bounce pointer-events-none flex flex-col items-center gap-2">
           <span className="text-sm tracking-widest uppercase">Scroll down</span>
