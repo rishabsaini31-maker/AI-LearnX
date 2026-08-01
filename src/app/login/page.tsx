@@ -1,8 +1,29 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const fillDemoCredentials = () => {
+    setEmail('rishab@gmail.com');
+    setPassword('123456');
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email === 'rishab@gmail.com' && password === '123456') {
+      router.push('/');
+    } else {
+      alert('Invalid credentials. Use demo: rishab@gmail.com / 123456');
+    }
+  };
+
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center py-12 px-6 bg-white overflow-hidden text-gray-900">
       {/* Premium Background Effects */}
@@ -32,7 +53,7 @@ export default function Login() {
           {/* Subtle hover glow effect */}
           <div className="absolute -inset-px bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
           
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Email Field */}
             <div className="space-y-2">
               <label className="block text-xs font-semibold text-gray-700 uppercase tracking-widest" htmlFor="email">
@@ -47,6 +68,8 @@ export default function Login() {
                   placeholder="name@example.com" 
                   required 
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -70,12 +93,24 @@ export default function Login() {
                   placeholder="••••••••" 
                   required 
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <button className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-900 transition-colors" type="button">
                   <span className="material-symbols-outlined text-[20px]">visibility_off</span>
                 </button>
               </div>
             </div>
+
+            {/* Demo Login */}
+            <button 
+              type="button"
+              className="w-full py-3 rounded-xl text-sm font-bold bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-all flex items-center justify-center gap-2"
+              onClick={fillDemoCredentials}
+            >
+              <span className="material-symbols-outlined text-lg">person</span>
+              Use Demo Credentials
+            </button>
 
             {/* Sign In Button */}
             <button 
@@ -120,7 +155,7 @@ export default function Login() {
         {/* Secondary Action */}
         <div className="text-center mt-2">
           <p className="text-gray-600 font-medium text-sm">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link href="/sign-up" className="text-gray-900 hover:text-primary font-bold hover:underline underline-offset-4 transition-all">
               Sign up
             </Link>

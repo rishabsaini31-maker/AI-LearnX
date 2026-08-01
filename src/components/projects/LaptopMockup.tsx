@@ -17,8 +17,21 @@ export function LaptopMockup() {
     setImgErrors(prev => ({ ...prev, [key]: true }));
   };
 
+  if (!isLoaded) {
+    return (
+      <div className="relative w-full max-w-md mx-auto lg:mx-0">
+        <div className="w-full aspect-[16/12.5] bg-gray-100 rounded-2xl animate-pulse" />
+      </div>
+    );
+  }
+
   return (
-    <div className="relative w-full max-w-md mx-auto lg:mx-0">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.15 }}
+      className="relative w-full max-w-md mx-auto lg:mx-0"
+    >
       {/* Floating animation wrapper */}
       <motion.div
         animate={{ y: [0, -12, 0] }}
@@ -135,7 +148,7 @@ export function LaptopMockup() {
             </div>
           )}
         </div>
-      </motion.div>
-    </div>
+       </motion.div>
+    </motion.div>
   );
 }
