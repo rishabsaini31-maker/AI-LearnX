@@ -3,25 +3,27 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 export default function Login() {
-  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const fillDemoCredentials = () => {
-    setEmail('rishab@gmail.com');
-    setPassword('123456');
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Login attempt:', { email, password });
     if (email === 'rishab@gmail.com' && password === '123456') {
-      router.push('/');
+      window.location.href = '/';
     } else {
       alert('Invalid credentials. Use demo: rishab@gmail.com / 123456');
     }
+  };
+
+  const handleDemoLogin = () => {
+    setEmail('rishab@gmail.com');
+    setPassword('123456');
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 300);
   };
 
   return (
@@ -106,7 +108,7 @@ export default function Login() {
             <button 
               type="button"
               className="w-full py-3 rounded-xl text-sm font-bold bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-all flex items-center justify-center gap-2"
-              onClick={fillDemoCredentials}
+              onClick={handleDemoLogin}
             >
               <span className="material-symbols-outlined text-lg">person</span>
               Use Demo Credentials
