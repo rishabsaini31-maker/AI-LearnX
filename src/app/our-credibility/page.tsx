@@ -17,12 +17,12 @@ const TOP_PERFORMERS = [
 ]
 
 const FEATURED_PROJECTS = [
-  { title: "Learn To Build a Real Time Website Like YouTube", student: "Girish", mentor: "Girish (Lead Mentor)", status: "success" },
-  { title: "Learn to Build a Real-Time Social Media Platform Like X", student: "Palak Khare", mentor: "Girish (Lead Mentor)", status: "success" },
-  { title: "Learn to Build a Real-Time Social Media Platform Like X", student: "Tanmay Ghule", mentor: "Girish (Lead Mentor)", status: "success" },
-  { title: "Learn to Build a Real-Time Social Media Platform Like X", student: "Krish Singh", mentor: "Girish (Lead Mentor)", status: "success" },
-  { title: "Learn to Build Real Time Website Like Make My Trip - Spring Boot Java", student: "divya eepu", mentor: "Girish (Lead Mentor)", status: "success" },
-  { title: "Learn to hack a real time Android OS", student: "Supreeth A", mentor: "Arshad N R (Lead Mentor)", status: "success" },
+  { title: "Learn To Build a Real Time Website Like YouTube", student: "Girish", mentor: "Girish (Lead Mentor)", status: "success", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" },
+  { title: "Learn to Build a Real-Time Social Media Platform Like X", student: "Palak Khare", mentor: "Girish (Lead Mentor)", status: "success", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
+  { title: "Learn to Build a Real-Time Social Media Platform Like X", student: "Tanmay Ghule", mentor: "Girish (Lead Mentor)", status: "success", img: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=600&auto=format&fit=crop&q=80" },
+  { title: "Learn to Build a Real-Time Social Media Platform Like X", student: "Krish Singh", mentor: "Girish (Lead Mentor)", status: "success", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80" },
+  { title: "Learn to Build Real Time Website Like Make My Trip - Spring Boot Java", student: "divya eepu", mentor: "Girish (Lead Mentor)", status: "success", img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80" },
+  { title: "Learn to hack a real time Android OS", student: "Supreeth A", mentor: "Arshad N R (Lead Mentor)", status: "success", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" },
 ]
 
 const DOCUMENTS = [
@@ -102,7 +102,7 @@ export default function OurCredibilityPage() {
                     <div className="flex items-center gap-4">
                       <span className="font-headline-md text-secondary font-bold w-6">#{perf.rank}</span>
                       <div className="relative w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
-                        <Image src={perf.img} alt={perf.name} fill className="object-cover" />
+                        <Image src={perf.img} alt={perf.name} fill sizes="48px" className="object-cover" />
                       </div>
                       <div>
                         <h4 className="font-body-md font-bold text-primary group-hover:text-primary transition-colors">{perf.name}</h4>
@@ -202,7 +202,7 @@ export default function OurCredibilityPage() {
               <div key={i} className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
                 <div className="h-48 bg-surface-container relative w-full flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                  <Image src={`https://images.unsplash.com/photo-${1550000000000 + i}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`} alt="Project" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={proj.img} alt="Project" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2">
                     <span className="bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Success</span>
                   </div>

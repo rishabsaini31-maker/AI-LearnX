@@ -235,7 +235,7 @@ export default function Home() {
 <div className="flex items-center justify-between border-t border-outline-variant/20 pt-6">
 <div>
 <p className="text-caption opacity-60">Starting at</p>
-<p className="font-title-lg font-bold text-on-background">$499</p>
+<p className="font-title-lg font-bold text-on-background">₹499</p>
 </div>
 <button className="bg-primary/5 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Enroll Now</button>
 </div>
@@ -260,7 +260,7 @@ export default function Home() {
 <div className="flex items-center justify-between border-t border-outline-variant/20 pt-6">
 <div>
 <p className="text-caption opacity-60">Starting at</p>
-<p className="font-title-lg font-bold text-on-background">$649</p>
+<p className="font-title-lg font-bold text-on-background">₹649</p>
 </div>
 <button className="bg-primary/5 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Enroll Now</button>
 </div>
@@ -285,7 +285,7 @@ export default function Home() {
 <div className="flex items-center justify-between border-t border-outline-variant/20 pt-6">
 <div>
 <p className="text-caption opacity-60">Starting at</p>
-<p className="font-title-lg font-bold text-on-background">$599</p>
+<p className="font-title-lg font-bold text-on-background">₹599</p>
 </div>
 <button className="bg-primary/5 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Enroll Now</button>
 </div>
@@ -342,7 +342,7 @@ export default function Home() {
 <h3 className="font-title-lg text-title-lg mb-1">Starter</h3>
 <p className="text-caption text-on-surface-variant">For curious beginners</p>
 <div className="mt-6">
-<span className="text-4xl font-bold">$199</span>
+<span className="text-4xl font-bold">₹199</span>
 <span className="text-on-surface-variant">/course</span>
 </div>
 </div>
@@ -361,7 +361,7 @@ export default function Home() {
 <h3 className="font-title-lg text-title-lg mb-1">Career Launch</h3>
 <p className="text-caption text-on-surface-variant">Complete bootcamp experience</p>
 <div className="mt-6">
-<span className="text-4xl font-bold">$1,499</span>
+<span className="text-4xl font-bold">₹1,499</span>
 <span className="text-on-surface-variant">/full track</span>
 </div>
 </div>
@@ -379,7 +379,7 @@ export default function Home() {
 <h3 className="font-title-lg text-title-lg mb-1">Pro Membership</h3>
 <p className="text-caption text-on-surface-variant">Ongoing skill growth</p>
 <div className="mt-6">
-<span className="text-4xl font-bold">$49</span>
+<span className="text-4xl font-bold">₹49</span>
 <span className="text-on-surface-variant">/month</span>
 </div>
 </div>

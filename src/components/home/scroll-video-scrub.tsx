@@ -7,54 +7,57 @@ export function ScrollVideoScrub({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.pause();
     let animationFrameId: number;
-    
+
     const handleScroll = () => {
       if (!containerRef.current || !videoRef.current) return;
-      
       const container = containerRef.current;
-      const video = videoRef.current;
-      
-      if (Number.isNaN(video.duration)) return;
-      
+      const v = videoRef.current;
+
+      if (!v.duration || Number.isNaN(v.duration) || !isFinite(v.duration)) return;
+
       const { top, height } = container.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      
-      // Scrollable distance within the container
       const scrollableDistance = height - viewportHeight;
-      
-      // How far we've scrolled past the top of the container
+
+      if (scrollableDistance <= 0) return;
+
       const scrolled = -top;
-      
-      let progress = 0;
-      if (scrolled > 0) {
-        progress = Math.min(scrolled / scrollableDistance, 1);
+      const progress = Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
+      const targetTime = progress * v.duration;
+
+      if (isFinite(targetTime) && !v.seeking && Math.abs(v.currentTime - targetTime) > 0.02) {
+        v.currentTime = targetTime;
       }
-      
-      // Update video current time based on scroll progress
-      video.currentTime = progress * video.duration;
     };
 
     const loop = () => {
       handleScroll();
       animationFrameId = requestAnimationFrame(loop);
     };
-    
+
     const onLoadedMetadata = () => {
-      loop();
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+      handleScroll();
     };
 
-    if (videoRef.current) {
-      videoRef.current.addEventListener('loadedmetadata', onLoadedMetadata);
-      if (videoRef.current.readyState >= 1) {
-        loop();
-      }
+    video.addEventListener('loadedmetadata', onLoadedMetadata);
+    if (video.readyState >= 1) {
+      handleScroll();
     }
+
+    loop();
 
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      if (videoRef.current) {
-        videoRef.current.removeEventListener('loadedmetadata', onLoadedMetadata);
+      if (video) {
+        video.removeEventListener('loadedmetadata', onLoadedMetadata);
       }
     };
   }, []);

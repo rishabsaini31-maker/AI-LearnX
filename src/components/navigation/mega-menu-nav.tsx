@@ -16,11 +16,11 @@ const RESOURCES_MENU = [
   { title: "Certificates", description: "Access and download your earned course, project, and internship certificates with QR verification.", icon: Award, href: "#" },
   { title: "Live Sessions", description: "Join interactive mentor sessions, participate in coding workshops, and stay ahead.", icon: Video, href: "#" },
   { title: "Stipend Wall", description: "Meet our top-performing interns who secured stipend-based internship opportunities.", icon: TrendingUp, href: "#" },
-  { title: "Student Projects", description: "Explore real-world projects built by AI LearnX students with live demos.", icon: FolderGit2, href: "/projects" },
-  { title: "Success Stories", description: "Discover inspiring student journeys, career transformations, and industry placements.", icon: Star, href: "#" },
-  { title: "Testimonials", description: "Read authentic reviews and experiences shared by students, interns, and mentors.", icon: MessageSquare, href: "#" },
-  { title: "Mentor Chat", description: "Connect directly with experienced mentors for personalized guidance and support.", icon: GraduationCap, href: "#" },
-  { title: "Blogs", description: "Read AI tutorials, interview tips, technology updates, and software engineering articles.", icon: BookOpen, href: "#" },
+  { title: "Student Projects", description: "Explore real-world projects built by AI LearnX students with live demos.", icon: FolderGit2, href: "/resources/student-projects" },
+  { title: "Success Stories", description: "Discover inspiring student journeys, career transformations, and industry placements.", icon: Star, href: "/success-stories" },
+  { title: "Testimonials", description: "Read authentic reviews and experiences shared by students, interns, and mentors.", icon: MessageSquare, href: "/resources/testimonials" },
+  { title: "Mentor Chat", description: "Connect directly with experienced mentors for personalized guidance and support.", icon: GraduationCap, href: "/resources/mentor-chat" },
+  { title: "Blogs", description: "Read AI tutorials, interview tips, technology updates, and software engineering articles.", icon: BookOpen, href: "/blog" },
 ]
 
 const EVENTS_MENU = [
@@ -123,9 +123,9 @@ export function MegaMenuNav() {
               Projects
             </Link>
             <Link 
-              href="/intern-portal" 
+              href="/intern" 
               className={`px-3 font-body-md transition-colors duration-200 ${
-                pathname === '/intern-portal' 
+                pathname.startsWith('/intern')
                   ? 'text-on-background font-bold border-b-2 border-on-background pb-1' 
                   : 'text-on-background/70 hover:text-on-background'
               }`} 
@@ -149,15 +149,24 @@ export function MegaMenuNav() {
                 alt="User Profile" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYM5jonINC_Yx3q5ZK9X-sLw07T91SJxOtEdUKOKm2qy5gWuZ085lvOHKc40undqFg0nNuF37kFvA0mzfaXEMlBc5QkZutcGXigHPnTvy7r7BVaLMJsOM4MCTKs1r5EJq3haY1vjecnTTgsRFBTNri0o4PVzwC5KHkBdDMeYbir_-PelwFsz1UGaAdIyci8zo41JnmNg8ZfBMj6J8fpNTLF1TYh7rA4Ifu-lVsYThc_YYrbAAL5Tw48w" 
                 fill
+                sizes="40px"
               />
             </div>
           ) : (
-            <Link 
-              href="/login" 
-              className="px-6 py-2.5 bg-black text-white rounded-xl font-label-md font-bold hover:bg-gray-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
-            >
-              Login
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link 
+                href="/login" 
+                className="px-6 py-2.5 bg-white border border-outline-variant text-on-background rounded-xl font-label-md font-bold hover:bg-surface-container-low transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              >
+                Login
+              </Link>
+              <Link 
+                href="/signup" 
+                className="px-6 py-2.5 bg-white border border-primary text-primary rounded-xl font-label-md font-bold hover:bg-primary/5 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              >
+                Sign Up
+              </Link>
+            </div>
           )}
         </div>
       </div>
@@ -174,9 +183,9 @@ export function MegaMenuNav() {
           >
             <div className="max-w-container-max mx-auto px-margin-desktop py-10">
               
-              {activeMenu === 'resources' && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {RESOURCES_MENU.map((item, idx) => (
+               {activeMenu === 'resources' && (
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {RESOURCES_MENU.filter(item => isLoggedIn || (item.title !== 'Certificates' && item.title !== 'Live Sessions')).map((item, idx) => (
                     <Link key={idx} href={item.href} className="group p-4 rounded-xl hover:bg-surface-container-low transition-all duration-300">
                       <div className="flex items-start gap-4">
                         <div className="h-12 w-12 rounded-lg bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary text-primary transition-all duration-300 shadow-sm">

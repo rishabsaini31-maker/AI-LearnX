@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MOCK_PROJECTS, Project } from '@/data/projects-data'
-import { ProjectsHero } from '@/components/projects/projects-hero'
+import { ProjectsHero } from '@/components/projects/Hero'
 import { ProjectsSidebar } from '@/components/projects/projects-sidebar'
 import { ProjectCard } from '@/components/projects/project-card'
 import { Search, X, SlidersHorizontal, ArrowUpDown, Sparkles, Play, CheckCircle2 } from 'lucide-react'
